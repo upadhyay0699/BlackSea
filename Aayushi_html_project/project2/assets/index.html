@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+          <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"  />
+            <link rel="stylesheet" href="style.css">
+            <title>Document</title>
+        </head>
+  <body>
+        <div class="blackbtnn">
+          <label class="mediablack">Black Sea</label>
+        </div>
+  
+  <div id="mySidenav" class="sidenav">
+           <span style="font-size:30px;cursor:pointer;color:#fff" onclick="openNav()" class="openNav">&#9776;</span>
+           <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    
+          <span class="blackSea">
+                 <label class="Blackscreen">Black Sea</label>
+                      <ul class="navList">
+                            <li>HOME <span class="forward">/</span></li>
+                            <li>ABOUT ME<span  class="forward">/</span></li>
+                            <li>PORTFOLIO<span  class="forward">/</span></li>
+                            <li>CONTACT ME</li>
+                      </ul>
+          </span>
+  </div>
+<div>
+   <!--------------------------imageslider------------------------------------------------------------------------->
+         <div class="carousel-container">
+                        <div class="carousel-slide">
+                                  <img src="4.png" alt="Image 1">
+                                  <div class="carousel-caption">
+                                          <h2 class="weneed">WE NEED THE OF WILDNESS</h2>
+                                          <button class="readmore">Read more</button>
+                                    </div>
+                        </div>
+                        <div class="carousel-slide">
+                                       <img src="1.jpg" alt="Image 2">
+                                       <div class="carousel-caption">
+                                              <h2>WE NEED THE OF WILDNESS</h2>
+                                              <button class="readmore">Read more</button>
+                                       </div>
+                        </div>
+                          <div class="carousel-slide">
+                                        <img src="3.jpg" alt="Image 2">
+                                        <div class="carousel-caption">
+                                            <h2>WE NEED THE OF WILDNESS</h2>
+                                            <button class="readmore">Read more</button>
+                                        </div>
+                          </div>
+                        <div class="carousel-navigation">
+                                        <div class="carousel-nav-circle active" data-slide="0"></div>
+                                        <div class="carousel-nav-circle" data-slide="1"></div>
+                                        <div class="carousel-nav-circle" data-slide="2"></div>
+                        </div>
+           </div>
+
+<!-------------------------------section 3-->
+
+<div class="section3">
+            <h3 class="section3heading">
+                    At the same time that we are earnest to explore<br> & learn all things
+            </h3>
+    <p class="section3pra">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam tempora voluptatum provident perspiciatis fugiat laboriosam quo.<br>  explicabo odio id reiciendis officia pariatur impedit ducimus dolore, ullam dolores. Repellat, quaerat nihil?</p>
+ 
+     <div class="worldicon">
+   
+    <i class="fa-sharp fa-solid fa-cart-arrow-down fa-4x" style="color:#4c96a2 !important"></i>
+    <i class="fa-solid fa-earth-asia fa-4x" style="color:#4c96a2 !important"></i>
+    <i class="fa-solid fa-briefcase fa-4x"  style="color:#4c96a2 !important"></i> 
+  
+   
+  </div>
+
+</div>
+<!---------------------------------------------------------GOOGLE MAP------------------------------------------------------->
+
+<div id="map" class="googlemap"></div>  
+<script>  
+function myMap() {  
+var mapOptions = {  
+    center: new google.maps.LatLng(51.5, -0.12),  
+    zoom: 10,  
+    mapTypeId: google.maps.MapTypeId.HYBRID  
+}  
+var map = new google.maps.Map(document.getElementById("map"), mapOptions);  
+}  
+</script>  
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDY5LVr49LsLALwIWKjh-yoT3VSU8pRFzs&callback=myMap"></script>  
+
+<!------------------------------------------------------footer----------------------------------------------------------------->
+<footer>
+    <h2>COPYRIGHT@2012 CSS AUTHOR.OM</h2>
+</footer>
+
+<!----------------------------------------------------script-------------------------------------------------->
+<script>
+    const slides = document.querySelectorAll('.carousel-slide');
+   const button = document.querySelectorAll('.carousel-caption button');
+   const navCircles = document.querySelectorAll('.carousel-nav-circle');
+let currentSlide = 0;
+slides[currentSlide].classList.add('active');
+navCircles[currentSlide].classList.add('active')
+
+// Set event listeners for the buttons
+ navCircles.forEach((btn, index) => {
+  btn.addEventListener('click', () => {
+    // Remove the active class from the current slide
+    slides[currentSlide].classList.remove('active');
+    navCircles[currentSlide].classList.remove('active');
+    // Increment or reset the current slide based on the button clicked
+    if (index === 0) {
+      currentSlide = (currentSlide === 0) ? slides.length - 1 : currentSlide - 1;
+    } else {
+      currentSlide = (currentSlide === slides.length - 1) ? 0 : currentSlide + 1;
+    }
+    // Add the active class to the new slide
+    slides[currentSlide].classList.add('active');
+  });
+});
+</script>
+<script>
+
+  function openNav() {
+    document.getElementById("mySidenav").style.width = "100%";
+  }
+  
+  function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+  }</script>
+  
+</body>
+</html>
